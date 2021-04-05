@@ -1,0 +1,7 @@
+<p>page1 works! {{name}}</p>
+<app-common [name]='name'></app-common>
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              (page)="pageEvent($event)">
+</mat-paginator>

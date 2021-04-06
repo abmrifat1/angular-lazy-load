@@ -1,5 +1,29 @@
 <p>page1 works! {{name}}</p>
-<app-common [name]='name'></app-common>
+<!-- <app-common [name]='name'></app-common> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"  *ngFor="let author of authorList">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{author.name}}</mat-card-title>
+                  <mat-card-subtitle>{{author.description}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>
+                   {{author.bio}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a href="#">{{author.link}}</a>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>
 <mat-paginator [length]="100"
               [pageSize]="10"
               [pageSizeOptions]="[5, 10, 25, 100]"
